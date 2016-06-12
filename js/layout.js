@@ -6,12 +6,15 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import { NavButton } from './component';
+
 import RefreshControlExample from './refresh';
 import AudioExample from './audio';
 import ListViewSimpleExample from './listview';
 import SwipeListViewExample from './swipelistview';
 import ModalExample from './modal';
 import PickerExample from './picker';
+import AnimationExamples from './animation';
 
 
 /**
@@ -53,47 +56,54 @@ class Layout extends Component {
 		return (
 			<ScrollView style={styles.container}>
 
-				<Button
+				<NavButton
 				  navigator={navigator}
 				  name='RefreshControlExample'
 				  component={RefreshControlExample}>
 				    RefreshControlExample
-				</Button>
+				</NavButton>
 
-				<Button
+				<NavButton
 				  navigator={navigator}
 				  name='AudioExample'
 				  component={AudioExample}>
 				    AudioExample
-				</Button>
+				</NavButton>
 
-				<Button
+				<NavButton
 				  navigator={navigator}
 				  name='ListViewSimpleExample'
 				  component={ListViewSimpleExample}>
 				    ListViewSimpleExample
-				</Button>
+				</NavButton>
 
-				<Button
+				<NavButton
 				  navigator={navigator}
 				  name='SwipeListViewExample'
 				  component={SwipeListViewExample}>
 				    SwipeListViewExample
-				</Button>
+				</NavButton>
 
-				<Button
+				<NavButton
 				  navigator={navigator}
 				  name='ModalExample'
 				  component={ModalExample}>
 				    ModalExample
-				</Button>
+				</NavButton>
 
-				<Button
+				<NavButton
 				  navigator={navigator}
 				  name='PickerExample'
 				  component={PickerExample}>
 				    PickerExample
-				</Button>
+				</NavButton>
+
+				<NavButton
+				  navigator={navigator}
+				  name='AnimationExamples'
+				  component={AnimationExamples}>
+				    AnimationExamples
+				</NavButton>
 
 			</ScrollView>
 		)
@@ -104,18 +114,6 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
-	},
-	button: {
-		height: 44,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#aaa',
-		marginTop: 10,
-		marginBottom: 10,
-	},
-	text: {
-		fontSize: 16,
-		color: '#333',
 	}
 });
 

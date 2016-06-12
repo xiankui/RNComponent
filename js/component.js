@@ -17,13 +17,41 @@ export class Nav extends Component {
 		return (
 			<View style={styles.nav}>
 				<TouchableOpacity
-				  style={styles.button}
+				  style={styles.backbutton}
 				  onPress={() => {
 				  	navigator.pop();
 				  }}>
-				  	<Text style={styles.text}>返回</Text>
+				  	<Text style={styles.backtext}>返回</Text>
 				</TouchableOpacity>
 			</View>
+		)
+	}
+}
+
+/**
+ * @props name
+ * @props component
+ * @props children
+ **/
+export class NavButton extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		let { navigator, name, component, children, } = this.props;
+
+		return (
+			<TouchableOpacity
+			  style={styles.button}
+			  onPress={() => {
+			  	navigator.push({
+			  		name: name,
+			  		component: component,
+			  	})
+			  }}>
+			  	<Text style={styles.text}>{children}</Text>
+			</TouchableOpacity>
 		)
 	}
 }
@@ -36,15 +64,27 @@ const styles = StyleSheet.create({
 		justifyContent: 'flex-start',
 		alignItems: 'stretch',
 	},
-	button: {
+	backbutton: {
 		width: 100,
 		height: 44,
 		marginLeft: 10,
 		justifyContent: 'center',
 		alignItems: 'flex-start',
 	},
-	text: {
+	backtext: {
 		fontSize: 14,
 		color: '#fff',
+	},
+	button: {
+		height: 44,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#aaa',
+		marginTop: 10,
+		marginBottom: 10,
+	},
+	text: {
+		fontSize: 16,
+		color: '#333',
 	}
 });
