@@ -6,8 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "15.0.2",
-    "react-native": "^0.26.3",
-    "react-native-audio": "^1.1.0"
+    "react": "^15.1.0",
+    "react-native": "^0.27.2",
+    "react-native-audio": "^1.1.0",
+    "react-native-picker": "^3.0.4",
+    "react-native-swipe-list-view": "^0.1.8"
   }
 }
