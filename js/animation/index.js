@@ -14,7 +14,19 @@ import BounceExample from './bounce';
 import AnExChained from './anexchained';
 import ParallelExample from './parallel';
 import ControlExample from './control';
-import Flix from './tinder';
+import DragAndDrop from './draganddrop';
+import Flix from './flix';
+import LayoutAnimationExample from './layoutAnimation';
+
+var components = [
+	TimingExample,
+	BounceExample,
+	ParallelExample,
+	ControlExample,
+	DragAndDrop,
+	Flix,
+	LayoutAnimationExample,
+];
 
 class AnimationExamples extends Component {
 	constructor(props) {
@@ -24,51 +36,23 @@ class AnimationExamples extends Component {
 	render() {
 		let { navigator } = this.props;
 
+		let navs = components.map(component => {
+			return (
+				<NavButton
+				  key={component.name}
+				  navigator={navigator}
+				  name={component.name}
+				  component={component}>
+				    {component.name}
+				</NavButton>
+			)
+		})
+
 		return (
 			<View style={styles.container}>
 				<Nav navigator={navigator} />
 				<View style={styles.content}>
-					<NavButton
-					  navigator={navigator}
-					  name='TimingExample'
-					  component={TimingExample}>
-					    TimingExample
-					</NavButton>
-
-					<NavButton
-					  navigator={navigator}
-					  name='BounceExample'
-					  component={BounceExample}>
-					    BounceExample
-					</NavButton>
-
-					<NavButton
-					  navigator={navigator}
-					  name='AnExChained'
-					  component={AnExChained}>
-					    AnExChained
-					</NavButton>
-
-					<NavButton
-					  navigator={navigator}
-					  name='ParallelExample'
-					  component={ParallelExample}>
-					    ParallelExample
-					</NavButton>
-
-					<NavButton
-					  navigator={navigator}
-					  name='ControlExample'
-					  component={ControlExample}>
-					    ControlExample
-					</NavButton>
-
-					<NavButton
-					  navigator={navigator}
-					  name='Flix'
-					  component={Flix}>
-					    Flix
-					</NavButton>
+					{navs}
 				</View>
 			</View>
 		)

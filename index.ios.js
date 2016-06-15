@@ -9,6 +9,6 @@ import {
   AppRegistry,
 } from 'react-native';
 
-import Navigation from './js/setup';
+import Setup from './js/setup';
 
-AppRegistry.registerComponent('RNComponent', () => Navigation);
+AppRegistry.registerComponent('RNComponent', () => Setup);

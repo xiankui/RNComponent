@@ -1,49 +1,19 @@
+/**
+ * @understand flexbox
+ * @source http://moduscreate.com/react-native-layout-system/
+ **/
+
+'use strict';
 import React, { Component } from 'react';
 import {
-  ScrollView,
+  View,
   Text,
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
 
-import { NavButton } from './component';
+import { Nav } from './component';
 
-import RefreshControlExample from './refresh';
-import AudioExample from './audio';
-import ListViewSimpleExample from './listview';
-import SwipeListViewExample from './swipelistview';
-import ModalExample from './modal';
-import PickerExample from './picker';
-import AnimationExamples from './animation';
-
-
-/**
- * @props name
- * @props component
- * @props children
- **/
-class Button extends Component {
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
-		let { navigator, name, component, children, } = this.props;
-
-		return (
-			<TouchableOpacity
-			  style={styles.button}
-			  onPress={() => {
-			  	navigator.push({
-			  		name: name,
-			  		component: component,
-			  	})
-			  }}>
-			  	<Text style={styles.text}>{children}</Text>
-			</TouchableOpacity>
-		)
-	}
-}
 
 class Layout extends Component {
 	constructor(props) {
@@ -51,70 +21,50 @@ class Layout extends Component {
 	}
 
 	render() {
-		let { navigator } = this.props;
-
 		return (
-			<ScrollView style={styles.container}>
+			<View style={styles.mainContainer}>
+			
+				<Nav navigator={this.props.navigator} />
 
-				<NavButton
-				  navigator={navigator}
-				  name='RefreshControlExample'
-				  component={RefreshControlExample}>
-				    RefreshControlExample
-				</NavButton>
+				<View style={styles.toolbar}>
+	                <Text style={styles.toolbarButton}>Add</Text>
+	                <Text style={styles.toolbarTitle}>This is the title</Text>
+	                <Text style={styles.toolbarButton}>Like</Text>
+	            </View>
 
-				<NavButton
-				  navigator={navigator}
-				  name='AudioExample'
-				  component={AudioExample}>
-				    AudioExample
-				</NavButton>
-
-				<NavButton
-				  navigator={navigator}
-				  name='ListViewSimpleExample'
-				  component={ListViewSimpleExample}>
-				    ListViewSimpleExample
-				</NavButton>
-
-				<NavButton
-				  navigator={navigator}
-				  name='SwipeListViewExample'
-				  component={SwipeListViewExample}>
-				    SwipeListViewExample
-				</NavButton>
-
-				<NavButton
-				  navigator={navigator}
-				  name='ModalExample'
-				  component={ModalExample}>
-				    ModalExample
-				</NavButton>
-
-				<NavButton
-				  navigator={navigator}
-				  name='PickerExample'
-				  component={PickerExample}>
-				    PickerExample
-				</NavButton>
-
-				<NavButton
-				  navigator={navigator}
-				  name='AnimationExamples'
-				  component={AnimationExamples}>
-				    AnimationExamples
-				</NavButton>
-
-			</ScrollView>
+	            <View style={styles.content}>           
+                    <Text>This is the content</Text>
+                </View>
+			</View>
 		)
 	}
 }
 
-const styles = StyleSheet.create({
-	container: {
+var styles = StyleSheet.create({
+	mainContainer: {
 		flex: 1,
-		backgroundColor: '#fff',
-	}
+	},
+    toolbar:{
+        backgroundColor:'#81c04d',
+        paddingTop:30,
+        paddingBottom:10,
+        flexDirection:'row'    //Step 1
+    },
+    toolbarButton:{
+        width: 50,            //Step 2
+        color:'#fff',
+        textAlign:'center'
+    },
+    toolbarTitle:{
+        color:'#fff',
+        textAlign:'center',
+        fontWeight:'bold',
+        flex:1                //Step 3
+    },
+    content: {
+    	backgroundColor: '#ebeef0',
+    	flex: 1,
+    }
 });
 
 export default Layout;
