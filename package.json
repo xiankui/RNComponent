@@ -10,6 +10,7 @@
     "react": "^15.1.0",
     "react-native": "^0.27.2",
     "react-native-audio": "^1.1.0",
+    "react-native-loading-container": "^0.4.0",
     "react-native-picker": "^3.0.4",
     "react-native-swipe-list-view": "^0.1.8"
   }

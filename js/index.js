@@ -21,7 +21,8 @@ import { NavButton } from './component';
 // import PickerExample from './picker';
 // import AnimationExamples from './animation';
 // import WebViewExample from './webview';
-import TextInputExample from './textinput';
+// import TextInputExample from './textinput';
+import LoadingExample from './loading';
 
 var components = [
 	// Layout,
@@ -34,7 +35,8 @@ var components = [
 	// PickerExample,
 	// AnimationExamples,
 	// WebViewExample,
-	TextInputExample,
+	// TextInputExample,
+	LoadingExample,
 ];
 
 
