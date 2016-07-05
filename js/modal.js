@@ -12,8 +12,6 @@ import {
   Switch,
 } from 'react-native';
 
-import { Nav } from './component';
-
 
 class Button extends Component {
   constructor(props) {
@@ -86,9 +84,7 @@ class ModalExample extends Component {
     };
 
     return (
-      <View>
-        <Nav navigator={this.props.navigator} />
-
+      <View style={styles.wrapper}>
         <Modal
           animationType={this.state.animationType}
           transparent={this.state.transparent}
@@ -134,6 +130,10 @@ class ModalExample extends Component {
 }
 
 var styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    paddingTop: 64,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

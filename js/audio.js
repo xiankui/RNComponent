@@ -7,8 +7,6 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-import { Nav } from './component';
-
 import {AudioRecorder, AudioUtils} from 'react-native-audio';
 
 class AudioExample extends Component {
@@ -86,7 +84,6 @@ class AudioExample extends Component {
 
     return (
       <View style={styles.container}>
-        <Nav navigator={this.props.navigator} />
         <View style={styles.controls}>
           {this._renderButton("RECORD", () => {this._record()}, this.state.recording )}
           {this._renderButton("STOP", () => {this._stop()} )}
@@ -102,6 +99,7 @@ class AudioExample extends Component {
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 64,
     backgroundColor: "#2b608a",
   },
   controls: {

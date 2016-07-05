@@ -10,11 +10,10 @@ import {
   View,
 } from 'react-native';
 
-import { Nav } from './component';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 64,
   },
   row: {
     borderColor: 'grey',
@@ -81,7 +80,6 @@ class RefreshControlExample extends Component {
 
     return (
       <View style={styles.container}>
-        <Nav navigator={this.props.navigator} />
         <ScrollView
           style={styles.scrollview}
           refreshControl={

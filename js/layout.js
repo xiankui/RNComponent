@@ -12,8 +12,6 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { Nav } from './component';
-
 
 class Layout extends Component {
 	constructor(props) {
@@ -24,8 +22,6 @@ class Layout extends Component {
 		return (
 			<View style={styles.mainContainer}>
 			
-				<Nav navigator={this.props.navigator} />
-
 				<View style={styles.toolbar}>
 	                <Text style={styles.toolbarButton}>Add</Text>
 	                <Text style={styles.toolbarTitle}>This is the title</Text>
@@ -43,6 +39,7 @@ class Layout extends Component {
 var styles = StyleSheet.create({
 	mainContainer: {
 		flex: 1,
+        paddingTop: 64,
 	},
     toolbar:{
         backgroundColor:'#81c04d',

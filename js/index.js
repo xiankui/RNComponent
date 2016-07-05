@@ -1,3 +1,6 @@
+
+'use strict';
+
 import React, { Component } from 'react';
 import {
   ScrollView,
@@ -8,26 +11,30 @@ import {
 
 import { NavButton } from './component';
 
-import Layout from './layout';
-import NavigatorExample from './navigator';
-import RefreshControlExample from './refresh';
-import AudioExample from './audio';
-import ListViewSimpleExample from './listview';
-import SwipeListViewExample from './swipelistview';
-import ModalExample from './modal';
-import PickerExample from './picker';
-import AnimationExamples from './animation';
+// import Layout from './layout';
+// import NavigatorExample from './navigator';
+// import RefreshControlExample from './refresh';
+// import AudioExample from './audio';
+// import ListViewSimpleExample from './listview';
+// import SwipeListViewExample from './swipelistview';
+// import ModalExample from './modal';
+// import PickerExample from './picker';
+// import AnimationExamples from './animation';
+// import WebViewExample from './webview';
+import TextInputExample from './textinput';
 
 var components = [
-	Layout,
-	NavigatorExample,
-	RefreshControlExample,
-	AudioExample,
-	ListViewSimpleExample,
-	SwipeListViewExample,
-	ModalExample,
-	PickerExample,
-	AnimationExamples,
+	// Layout,
+	// NavigatorExample,
+	// RefreshControlExample,
+	// AudioExample,
+	// ListViewSimpleExample,
+	// SwipeListViewExample,
+	// ModalExample,
+	// PickerExample,
+	// AnimationExamples,
+	// WebViewExample,
+	TextInputExample,
 ];
 
 
@@ -45,7 +52,8 @@ class Index extends Component {
 				  key={component.name}
 				  navigator={navigator}
 				  name={component.name}
-				  component={component}>
+				  component={component}
+				  title={component.name}>
 				    {component.name}
 				</NavButton>
 			)
@@ -53,9 +61,7 @@ class Index extends Component {
 
 		return (
 			<ScrollView style={styles.container}>
-
 				{navs}
-
 			</ScrollView>
 		)
 	}
@@ -64,7 +70,8 @@ class Index extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
+		paddingTop: 64,
+		backgroundColor: '#eee',
 	}
 });
 

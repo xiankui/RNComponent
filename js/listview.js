@@ -28,8 +28,6 @@ import {
   RefreshControl,
 } from 'react-native';
 
-import { Nav } from './component';
-
 class ListViewSimpleExample extends Component {
   // statics: {
   //   title: '<ListView>',
@@ -55,8 +53,7 @@ class ListViewSimpleExample extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
-        <Nav navigator={this.props.navigator} />
+      <View style={styles.container}>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this._renderRow.bind(this)}
@@ -167,6 +164,10 @@ var hashCode = function(str) {
 };
 
 var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 64,
+  },
   row: {
     flexDirection: 'row',
     justifyContent: 'center',

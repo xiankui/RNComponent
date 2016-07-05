@@ -48,6 +48,7 @@ export class NavButton extends Component {
 			  	navigator.push({
 			  		name: name,
 			  		component: component,
+			  		title: name,
 			  	})
 			  }}>
 			  	<Text style={styles.text}>{children}</Text>

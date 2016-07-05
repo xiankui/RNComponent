@@ -11,8 +11,6 @@ import {
   Picker,
 } from 'react-native';
 
-import { Nav } from './component';
-
 //
 import ComponentPicker from 'react-native-picker';
 
@@ -72,7 +70,6 @@ class PickerExample extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Nav navigator={this.props.navigator} />
 				<View>
 					<Text>Native Picker: {this.state.sexValue}</Text>
 				</View>
@@ -109,6 +106,7 @@ class PickerExample extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		paddingTop: 64,
 		backgroundColor: '#eee',
 	},
 });

@@ -12,8 +12,6 @@ import {
 
 import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
 
-import { Nav } from './component';
-
 class SwipeListViewExample extends Component {
 
 	constructor(props) {
@@ -36,8 +34,6 @@ class SwipeListViewExample extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Nav navigator={this.props.navigator} />
-
 				<View style={styles.standalone}>
 					<SwipeRow
 						leftOpenValue={75}
@@ -90,7 +86,8 @@ class SwipeListViewExample extends Component {
 const styles = StyleSheet.create({
 	container: {
 		backgroundColor: 'white',
-		flex: 1
+		flex: 1,
+		paddingTop: 64,
 	},
 	standalone: {
 		marginTop: 50,
